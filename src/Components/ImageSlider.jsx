@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 const ImageSlider = () => {
     const [data] = useState([
         {
@@ -35,18 +35,18 @@ const ImageSlider = () => {
     }
     console.log(viewImage);
     return (
-        <div className='mt-5 ml-5 mr-5 flex justify-between items-center gap-10 border-2  p-1'>
-            <div className='flex-initial w-34 border-2 border-black'>
+        <div className='mt-1 ml-5 mr-5 flex justify-between items-center gap-10  p-1'>
+            <div className='flex-initial w-34 border'>
                 {data.map((el) => (
-                    <div className={viewImage.id == el.id ? 'mt-5 p-5 bg-red-600' : 'mt-5 p-5 '} key={el.id} onClick={() => { handleView(el) }} >
-                        <img className={viewImage.id == el.id ? 'w-20 h-20' : 'w-14 h-14'} src={el.url} />
+                    <div className={viewImage.id == el.id ? 'mt-5 p-5 bg-red-400 ' : 'mt-5 p-5 '} key={el.id} onClick={() => { handleView(el) }} >
+                        <img className={viewImage.id == el.id ? 'w-20 h-20 rounded-lg ...' : 'w-14 h-14'} src={el.url} />
                     </div>
                 ))}
             </div>
-            <div className='mr-20 flex justify-between items-center gap-5 '>
-                <button className="text-white font-bold bg-orange-400 p-2 rounded-l-lg ... h-96" disabled={viewImage.id == 1} onClick={() => { handleLeft() }}>Left</button>
-                <img className='w-96 h-96' src={viewImage.url} />
-                <button className="text-white font-bold bg-orange-400 p-2 rounded-r-lg ... h-96" disabled={viewImage.id == data.length} onClick={() => { handleRight() }}>Right</button>
+            <div className='mr-20 flex justify-between items-center gap-5 w-3/4'>
+                <button className={viewImage.id == 1 ? "text-white font-bold bg-orange-200 p-2 rounded-l-lg ... h-96 text-5xl" : "text-white font-bold bg-orange-400 p-2 rounded-l-lg ... h-96 text-5xl"} disabled={viewImage.id == 1} onClick={() => { handleLeft() }}><FaAngleLeft /></button>
+                <img className='w-3/5 h-3/5 rounded-3xl border-2 border-sky-500' src={viewImage.url} />
+                <button className={viewImage.id == data.length ? "text-white font-bold bg-orange-200 p-2 rounded-r-lg ... h-96 text-5xl" : "text-white font-bold bg-orange-400 p-2 rounded-r-lg ... h-96 text-5xl"} disabled={viewImage.id == data.length} onClick={() => { handleRight() }}><FaAngleRight /></button>
             </div>
         </div>
     )

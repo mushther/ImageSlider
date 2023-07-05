@@ -7,6 +7,9 @@ module.exports = {
     extend: {
       strokeWidth: {
         '2': '2px',
+      },
+      transitionDuration: {
+        '2000': '2000ms',
       }
     },
   },
