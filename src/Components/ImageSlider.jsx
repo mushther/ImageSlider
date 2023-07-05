@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+
 const ImageSlider = () => {
     const [data] = useState([
         {
@@ -9,7 +10,8 @@ const ImageSlider = () => {
         {
             id: 2,
             url: "https://images.pexels.com/photos/804009/pexels-photo-804009.jpeg?auto=compress&cs=tinysrgb&w=600"
-        }, {
+        },
+        {
             id: 3,
             url: "https://images.pexels.com/photos/1270076/pexels-photo-1270076.jpeg?auto=compress&cs=tinysrgb&w=600"
         },
@@ -21,7 +23,6 @@ const ImageSlider = () => {
             id: 5,
             url: "https://images.pexels.com/photos/694587/pexels-photo-694587.jpeg?auto=compress&cs=tinysrgb&w=600"
         }
-
     ])
     const [viewImage, setViewImage] = useState({ id: data[0].id, url: data[0].url })
     const handleView = (el) => {
@@ -33,7 +34,7 @@ const ImageSlider = () => {
     const handleRight = () => {
         setViewImage({ ...viewImage, "id": viewImage.id + 1, "url": data[viewImage.id].url })
     }
-    console.log(viewImage);
+    //console.log(viewImage);
     return (
         <div className='mt-1 ml-5 mr-5 flex justify-between items-center gap-10  p-1'>
             <div className='flex-initial w-34 border'>
